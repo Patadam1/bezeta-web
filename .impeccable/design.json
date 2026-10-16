@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T13:50:00Z",
+  "title": "Design System: BEZETA Barberstudio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "primary",
+        "displayName": "Razor White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#ffffff"
+        ],
+        "note": "Two-ink world: no tonal ramp by design. Tone is made by hair-stroke density, never by intermediate greys."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Chair Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000"
+        ],
+        "note": "Two-ink world: no tonal ramp by design."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; echoes the B/Z monogram."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and sliced statements."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service names and the address."
+      },
+      "serif-echo": {
+        "displayName": "Serif Echo",
+        "purpose": "One Bodoni word inside an Archivo statement, the classic half."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy at 34-46ch."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "All button labels, uppercase."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, inline links, day names, captions, hints; condensed caps."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The single ease for every cut, reveal and hover."
+      },
+      {
+        "name": "hero-cut",
+        "value": "1100ms ease-out-cubic, 250ms delay",
+        "purpose": "Load: the logo's slash carves across the hero (step 1)."
+      },
+      {
+        "name": "hero-sequence",
+        "value": "logo 520ms, headline 820ms, lede 980ms, actions 1120ms, hint 1500ms",
+        "purpose": "Numbered load order after the cut; opacity .9s, translateY 18px 1.1s, blur 6px."
+      },
+      {
+        "name": "blade-sweep",
+        "value": "550ms",
+        "purpose": "Ghost-button white blade along the slash angle."
+      },
+      {
+        "name": "state-color",
+        "value": "250ms",
+        "purpose": "Button and tile color inversions."
+      },
+      {
+        "name": "raya-scrub",
+        "value": "scroll-linked, 0.92vh to 0.37vh window",
+        "purpose": "Section rayas carve in with scroll; multiple rayas lag 0.14 each."
+      },
+      {
+        "name": "grow-back",
+        "value": "2600ms quadratic fade",
+        "purpose": "Pointer-carved hero rayas fade back into the hair."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "cuts complete, no sequence",
+        "purpose": "prefers-reduced-motion shows the finished state."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-hair",
+        "value": "700px"
+      },
+      {
+        "name": "mobile",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Primary action, always booking. White fill that inverts to black on hover.",
+      "html": "<div style=\"background:#000;padding:24px\"><a class=\"ds-btn ds-btn-solid\" href=\"#\">Reservar cita <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-btn{position:relative;display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 26px;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-weight:700;font-size:15px;line-height:1;font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;border:1.5px solid #fff;border-radius:0;overflow:hidden;isolation:isolate;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .25s,color .25s}.ds-btn svg{transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-btn::before{content:\"\";position:absolute;inset:-2px -40%;z-index:-1;background:#fff;opacity:0;transform:translateX(-110%) skewX(50.7deg);transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .2s}.ds-btn:hover svg{transform:translateX(4px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #fff;outline-offset:4px}.ds-btn-solid{background:#fff;color:#000}.ds-btn-solid:hover{background:#000;color:#fff}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action. A white blade sweeps in along the -39.3deg slash on hover.",
+      "html": "<div style=\"background:#000;padding:24px\"><a class=\"ds-btn ds-btn-ghost\" href=\"#\">Horario y ubicación</a></div>",
+      "css": ".ds-btn{position:relative;display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 26px;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-weight:700;font-size:15px;line-height:1;font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;border:1.5px solid #fff;border-radius:0;overflow:hidden;isolation:isolate;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .25s,color .25s}.ds-btn svg{transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-btn::before{content:\"\";position:absolute;inset:-2px -40%;z-index:-1;background:#fff;opacity:0;transform:translateX(-110%) skewX(50.7deg);transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .2s}.ds-btn:hover svg{transform:translateX(4px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #fff;outline-offset:4px}.ds-btn-ghost{background:transparent;color:#fff}.ds-btn-ghost:hover{color:#000}.ds-btn-ghost:hover::before{opacity:1;transform:translateX(0) skewX(50.7deg)}"
+    },
+    {
+      "name": "Pending Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Booking link not yet known: dashed border, no blade, disabled.",
+      "html": "<div style=\"background:#000;padding:24px\"><a class=\"ds-btn ds-btn-pending\" aria-disabled=\"true\">Booksy: enlace pendiente</a></div>",
+      "css": ".ds-btn{position:relative;display:inline-flex;align-items:center;gap:14px;height:54px;padding:0 26px;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-weight:700;font-size:15px;line-height:1;font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;border:1.5px solid #fff;border-radius:0;overflow:hidden;isolation:isolate;cursor:pointer;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .25s,color .25s}.ds-btn svg{transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-btn::before{content:\"\";position:absolute;inset:-2px -40%;z-index:-1;background:#fff;opacity:0;transform:translateX(-110%) skewX(50.7deg);transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .2s}.ds-btn:hover svg{transform:translateX(4px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #fff;outline-offset:4px}.ds-btn-pending{background:transparent;color:#fff;border-style:dashed;cursor:default}.ds-btn-pending::before{display:none}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-nav",
+      "description": "Fixed 72px strip: B/Z mark, condensed caps links with drawn underline, compact solid Reservar.",
+      "html": "<header class=\"ds-nav\"><svg width=\"44\" height=\"42\" viewBox=\"0 0 44 42\" aria-label=\"BZ\"><text x=\"0\" y=\"22\" fill=\"#fff\" font-family=\"Archivo\" font-weight=\"900\" font-size=\"24\">B</text><line x1=\"10\" y1=\"40\" x2=\"40\" y2=\"4\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"20\" y=\"41\" fill=\"#fff\" font-family=\"Archivo\" font-weight=\"900\" font-size=\"24\">Z</text></svg><ul class=\"ds-nav-links\"><li><a href=\"#\">Servicios</a></li><li><a href=\"#\">Trabajo</a></li><li><a href=\"#\">Estudio</a></li><li><a href=\"#\">Horario</a></li></ul><a class=\"ds-nav-btn\" href=\"#\">Reservar</a></header>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:24px;height:72px;padding:0 24px;background:#000;border-bottom:1px solid #fff;color:#fff;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;}.ds-nav-links{display:flex;gap:34px;list-style:none;margin:0 0 0 auto;padding:0}.ds-nav-links a{position:relative;padding:6px 0;color:#fff;text-decoration:none;font-stretch:80%;font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:13px}.ds-nav-links a::after{content:\"\";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.16,1,.3,1)}.ds-nav-links a:hover::after{transform:scaleX(1);transform-origin:left}.ds-nav-links a:focus-visible,.ds-nav-btn:focus-visible{outline:2px solid #fff;outline-offset:4px}.ds-nav-btn{display:inline-flex;align-items:center;height:44px;padding:0 18px;background:#fff;color:#000;border:1.5px solid #fff;font-weight:700;font-size:13px;font-stretch:112%;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;transition:background-color .25s,color .25s}.ds-nav-btn:hover{background:#000;color:#fff}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Ruled list row: expanded title, short description, condensed Reservar link; the name slides 14px on hover.",
+      "html": "<ul class=\"ds-menu\"><li><h3>Degradado</h3><p>Fade bajo, medio o alto, sin saltos y con el contorno definido.</p><a href=\"#\">Reservar <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a></li></ul>",
+      "css": ".ds-menu{list-style:none;margin:0;padding:0 24px;background:#000;color:#fff;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;}.ds-menu li{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) auto;align-items:center;gap:24px 40px;padding:34px 0;border-top:1.5px solid #fff}.ds-menu h3{margin:0;font-size:clamp(1.7rem,3.4vw,3rem);font-weight:800;font-stretch:118%;letter-spacing:-.03em;line-height:1;transition:transform .6s cubic-bezier(.16,1,.3,1)}.ds-menu li:hover h3{transform:translateX(14px)}.ds-menu p{margin:0;max-width:42ch;font-stretch:90%;font-size:16px;line-height:1.55}.ds-menu a{display:inline-flex;gap:10px;align-items:center;white-space:nowrap;color:#fff;text-decoration:none;font-stretch:80%;font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:13px}.ds-menu a:hover{text-decoration:underline}.ds-menu a:focus-visible{outline:2px solid #fff;outline-offset:4px}"
+    },
+    {
+      "name": "Hours Table",
+      "kind": "custom",
+      "refersTo": "hours-row-today",
+      "description": "Tabular hours with 1px white rules; today's row inverts.",
+      "html": "<table class=\"ds-hours\"><tr><th>Lunes</th><td>10:00 – 20:00</td></tr><tr class=\"ds-today\"><th>Martes</th><td>10:00 – 20:00</td></tr><tr><th>Domingo</th><td>Cerrado</td></tr></table>",
+      "css": ".ds-hours{width:100%;border-collapse:collapse;background:#000;color:#fff;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-variant-numeric:tabular-nums}.ds-hours th,.ds-hours td{text-align:left;padding:16px 0;border-bottom:1px solid #fff;font-weight:500}.ds-hours th{font-stretch:80%;text-transform:uppercase;letter-spacing:.14em;font-size:14px;font-weight:600;width:46%}.ds-hours td{text-align:right;font-size:18px;font-stretch:110%}.ds-hours .ds-today th,.ds-hours .ds-today td{background:#fff;color:#000}.ds-hours .ds-today th{padding-left:14px}.ds-hours .ds-today td{padding-right:14px}"
+    },
+    {
+      "name": "Social Tile",
+      "kind": "custom",
+      "refersTo": "social-tile",
+      "description": "52px square outlined tile with a stroked SVG icon; inverts on hover.",
+      "html": "<div style=\"background:#000;padding:24px\"><a class=\"ds-social\" href=\"#\" aria-label=\"Instagram\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><circle cx=\"17.4\" cy=\"6.6\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/></svg></a></div>",
+      "css": ".ds-social{display:grid;place-items:center;width:52px;height:52px;border:1.5px solid #fff;color:#fff;transition:background-color .25s,color .25s}.ds-social:hover{background:#fff;color:#000}.ds-social:focus-visible{outline:2px solid #fff;outline-offset:4px}"
+    },
+    {
+      "name": "Raya",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Signature cut: a 2.5px white channel on a 16px black gutter at -39.3deg through a hair field, led by a blade tip.",
+      "html": "<div class=\"ds-raya\"><svg viewBox=\"0 0 320 180\" width=\"320\" height=\"180\"><g stroke=\"#fff\" stroke-width=\".5\" fill=\"none\"><path d=\"M20 30q4 -3 9 -6M60 50q4 -3 9 -6M100 20q4 -3 9 -6M140 70q4 -3 9 -6M200 40q4 -3 9 -6M250 90q4 -3 9 -6M40 120q4 -3 9 -6M90 150q4 -3 9 -6M170 130q4 -3 9 -6M230 150q4 -3 9 -6M280 30q4 -3 9 -6M120 100q4 -3 9 -6M300 130q4 -3 9 -6M15 80q4 -3 9 -6M190 95q4 -3 9 -6\"/></g><line x1=\"50\" y1=\"170\" x2=\"250\" y2=\"6\" stroke=\"#000\" stroke-width=\"16\"/><line class=\"ds-raya-c\" x1=\"50\" y1=\"170\" x2=\"250\" y2=\"6\" stroke=\"#fff\" stroke-width=\"2.5\"/></svg></div>",
+      "css": ".ds-raya{background:#000;padding:16px;display:inline-block}.ds-raya-c{stroke-dasharray:260;stroke-dashoffset:0;transition:stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1)}.ds-raya:hover .ds-raya-c{stroke-dashoffset:260}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Las Rayas",
+    "overview": "**Creative North Star: \"Las Rayas\"**\n\nThe site is a head of hair being designed. Every surface is a dense field of fine white hair strokes on black, and every section is opened by a raya: a crisp white channel cut through the hair at the logo's slash angle (-39.3deg). Tone comes only from stroke density, the way a fade thins toward the neckline: thick on top, sparse below. Contrast is made optically by line frequency, never by mixing greys.\n\nThe type carries the monogram. Archivo set heavy and expanded (850, width 125) speaks with the weight of the B/Z mark; Archivo condensed caps do the small talk of labels and nav; Bodoni Moda appears only as a rare serif echo of the BEZETA wordmark, one word per statement at most. Surfaces are flat, square-cornered and outlined in 1.5px white. Motion is a cut: sequenced, numbered, timed in a fixed order, never scattered. On load the slash carves across the hero and the logo opens along it; on scroll each section's raya scrubs in; under the pointer the visitor carves temporary rayas that grow back.\n\nThe world refuses the category default of black-and-gold luxe photography plus three service cards.",
+    "keyCharacteristics": [
+      "Two colors only: pure black ink and pure white paper.",
+      "Hair-stroke texture as the only source of tone.",
+      "Rayas at -39.3deg, the logo's slash, open every section.",
+      "Heavy expanded Archivo display; condensed caps labels; Bodoni as a single-word echo.",
+      "Square corners, 1.5px white strokes, no shadows.",
+      "Every cut is sequenced: one order, one ease."
+    ],
+    "rules": [
+      {
+        "name": "The Two Inks Rule",
+        "body": "Every fill, text, border and stroke is either `#000` or `#fff`. No greys, no tints, no reduced-opacity text for hierarchy; hierarchy comes from size, width and weight. Transient opacity during motion (fade-ins, rayas growing back) is permitted because it resolves to one of the two inks.",
+        "section": "colors"
+      },
+      {
+        "name": "The Density Not Grey Rule",
+        "body": "When a surface needs tone, add or thin hair strokes (0.35 to 0.65px white curves, 4 to 12px long); never lay down a grey fill. The antialiased shimmer of fine strokes is the world's only grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monochrome Photo Rule",
+        "body": "Photographs render in grayscale with a slight contrast lift (`grayscale(1) contrast(1.08)`) so they sit inside the two-ink world.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Serif Word Rule",
+        "body": "Bodoni Moda (500) sets a single word inside an Archivo statement, the word for the classic side (\"Acabado\", \"clásico\"). Never a whole line, never a heading on its own.",
+        "section": "typography"
+      },
+      {
+        "name": "The Width Axis Rule",
+        "body": "Hierarchy is set by Archivo's width axis as much as by size: expanded for statements, normal for reading, condensed for labels. Don't swap in a second sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cut Not Lift Rule",
+        "body": "Nothing floats. To separate an element, part the hair around it or carve beside it; never add a shadow, glow or blur at rest.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Logo Angle Rule",
+        "body": "Every diagonal in the system is -39.3deg, the logo's slash: rayas, the button blade sweep, the hero hint tick. No other angle.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do use only `#000` and `#fff`; make tone with hair-stroke density.",
+      "Do cut every diagonal at -39.3deg and seat every white raya on a 16px black gutter.",
+      "Do open each new section with a hair band and a raya that scrubs in on scroll.",
+      "Do sequence motion in a fixed numbered order with the one ease-out curve (`cubic-bezier(.16, 1, .3, 1)`).",
+      "Do keep a solid \"Reservar\" within one tap on every viewport (nav button on desktop, bottom bar on mobile).",
+      "Do clear the hair around real text lines so copy always reads on pure black.",
+      "Do mark missing owner information visibly with the dashed pending treatment."
+    ],
+    "donts": [
+      "Don't introduce greys, tints, gold or any third color, including semi-transparent white text for secondary copy.",
+      "Don't round corners or add shadows, glows or blurs at rest.",
+      "Don't set more than one Bodoni word in a statement, or use Bodoni for headings, labels or body.",
+      "Don't use any diagonal angle other than the logo's slash.",
+      "Don't scatter motion: no independent looping animations, parallax drift or random reveals.",
+      "Don't fall back to the black-and-gold luxe hero photo plus three service cards."
+    ]
+  }
+}
