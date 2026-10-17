@@ -148,7 +148,9 @@ section { position: relative; }
 .shot:nth-child(2n) { margin-top: clamp(40px, 7vw, 110px); }
 .shot:nth-child(3) { margin-top: clamp(20px, 3.5vw, 55px); }
 .shot img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: transform 1.2s var(--ease-out), filter .6s; }
-@media (hover: hover) { .shot:hover img { transform: scale(1.04); } }
+@media (hover: hover) { .shot:hover img { transform: scale(1.04); filter: grayscale(0) contrast(1); } }
+.shot.color img { filter: grayscale(0) contrast(1); }
+.shot { cursor: pointer; -webkit-user-select: none; user-select: none; }
 .shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 40px 14px 12px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
 .shot .cut { z-index: 1; }
 
@@ -567,6 +569,8 @@ const BEZETA = {
     };
     new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { setTimeout(run, 120 * $$('.shot').indexOf(fig)); o.disconnect(); } }), { threshold: 0.35 }).observe(fig);
     fig.addEventListener('pointerenter', run);
+    // on touch screens a tap brings the photo to colour (and back)
+    fig.addEventListener('click', () => { if (matchMedia('(hover: none)').matches) { const on = !fig.classList.contains('color'); $$('.shot.color').forEach(f => f.classList.remove('color')); fig.classList.toggle('color', on); if (on) run(); } });
   });
 
   /* ---------- hero: the logo's slash carves across the screen ---------- */
