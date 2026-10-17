@@ -149,7 +149,7 @@ section { position: relative; }
 .shot:nth-child(3) { margin-top: clamp(20px, 3.5vw, 55px); }
 .shot img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); transition: transform 1.2s var(--ease-out), filter .6s; }
 @media (hover: hover) { .shot:hover img { transform: scale(1.04); } }
-.shot figcaption { position: absolute; left: 14px; right: 14px; bottom: 12px; z-index: 2; color: var(--dim); }
+.shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 40px 14px 12px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
 .shot .cut { z-index: 1; }
 
 /* ---------- statement (sliced) ---------- */
@@ -235,7 +235,7 @@ footer img { width: 120px; }
     <nav aria-label="Principal">
       <ul class="nav__links">
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#trabajo">Trabajo</a></li>
+        <li><a href="#trabajo">El local</a></li>
         <li><a href="#estudio">Estudio</a></li>
         <li><a href="#visita">Horario</a></li>
       </ul>
@@ -299,16 +299,16 @@ footer img { width: 120px; }
     <div class="band" aria-hidden="true"><canvas class="hair" data-hair="band" data-seed="13"></canvas><svg class="cut" data-angle data-c="0.5,0.5" data-len="300" data-n="2"><line class="g"/><line class="c"/><rect class="tip" width="12" height="4"/></svg></div>
     <div class="wrap">
       <div class="sec__head">
-        <h2 class="display" id="t-trabajo">El trabajo</h2>
-        <p>Cortes reales, salidos de la silla.<span id="igline" hidden> Hay más en <a href="#" target="_blank" rel="noopener">nuestro Instagram</a>.</span></p>
+        <h2 class="display" id="t-trabajo">El local</h2>
+        <p>Así es BEZETA por dentro.<span id="igline" hidden> Los cortes, en <a href="#" target="_blank" rel="noopener">nuestro Instagram</a>.</span></p>
       </div>
       <div class="reel" id="reel">
-        <!-- Para poner una foto: <figure class="shot"><img src="assets/fotos/corte-1.jpg" alt="Degradado medio con raya"></figure> -->
-        <figure class="shot" data-ph><canvas class="hair" data-hair="shot" data-seed="11" aria-hidden="true"></canvas><svg class="cut" data-angle data-c="0.5,0.45" data-n="1" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Foto pendiente</figcaption></figure>
-        <figure class="shot" data-ph><canvas class="hair" data-hair="shot" data-seed="23" aria-hidden="true"></canvas><svg class="cut" data-angle data-c="0.5,0.5" data-n="2" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Foto pendiente</figcaption></figure>
-        <figure class="shot" data-ph><canvas class="hair" data-hair="shot" data-seed="37" aria-hidden="true"></canvas><svg class="cut" data-angle data-c="0.45,0.4" data-n="3" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Foto pendiente</figcaption></figure>
-        <figure class="shot" data-ph><canvas class="hair" data-hair="shot" data-seed="41" aria-hidden="true"></canvas><svg class="cut" data-angle data-c="0.55,0.55" data-n="1" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Foto pendiente</figcaption></figure>
-        <figure class="shot" data-ph><canvas class="hair" data-hair="shot" data-seed="59" aria-hidden="true"></canvas><svg class="cut" data-angle data-c="0.5,0.5" data-n="2" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Foto pendiente</figcaption></figure>
+        <!-- Para cambiar una foto: sustituye el archivo en assets/fotos/ o el src del <img> -->
+        <figure class="shot"><img src="assets/fotos/sala.jpg" alt="La sala con el techo de luz" loading="lazy"><svg class="cut" data-angle data-c="0.5,0.45" data-n="1" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">La sala</figcaption></figure>
+        <figure class="shot"><img src="assets/fotos/sillas.jpg" alt="Sillones de barbero frente a los espejos iluminados" loading="lazy"><svg class="cut" data-angle data-c="0.5,0.5" data-n="2" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Sillones y espejos</figcaption></figure>
+        <figure class="shot"><img src="assets/fotos/sillon.jpg" alt="Sillón de barbero clásico en negro" loading="lazy"><svg class="cut" data-angle data-c="0.45,0.4" data-n="3" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">El sillón</figcaption></figure>
+        <figure class="shot"><img src="assets/fotos/productos.jpg" alt="Estantería con ceras y productos de peinado" loading="lazy"><svg class="cut" data-angle data-c="0.55,0.55" data-n="1" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Productos</figcaption></figure>
+        <figure class="shot"><img src="assets/fotos/lavado.jpg" alt="Zona de lavado" loading="lazy"><svg class="cut" data-angle data-c="0.5,0.5" data-n="2" data-hover aria-hidden="true"><line class="g"/><line class="c"/></svg><figcaption class="label">Lavado</figcaption></figure>
       </div>
     </div>
   </section>
