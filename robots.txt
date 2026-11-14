@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bezeta.es/sitemap.xml
